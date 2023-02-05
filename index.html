@@ -9,16 +9,22 @@
     </head>
 
     <body>
-      <script src="taskeditor.js"></script>
+
+      <!--TASK COLUMN-->
+      <div class="taskcol">
+        <b>spacecats</b>
+        <h1>tasks</h1>
+        <hr>
+        <script src="taskeditor.js"></script>
       
-          <div class="container">
-            <button type="addtask" class="btn" onclick="openPopup()">Add task!</button>
-            <div class="popup" id="popup">
-              <div id="newtask"><input type="text" placeholder="Task to be done.."></div>
-              <div id="taskdesc"><input type="text" placeholder="Task description.."></div>
-              <button type="button" id="push" onclick="addTask()">Add</button>
-            </div>
+        <div class="container" id="add">
+          <button type="addtask" class="btn" onclick="openPopup()">+ add task</button>
+          <div class="popup" id="popup">
+            <div id="newtask"><input type="text" placeholder="Task to be done.."></div>
+            <div id="taskdesc"><input type="text" placeholder="Task description.."></div>
+            <button type="button" id="push" onclick="addTask()">+</button>
           </div>
+        </div>
 
         <div id="tasks"></div>
 
@@ -57,17 +63,23 @@
           }
           popup.classList.remove("open-popup")
       }
-      </script>
-      
-      <div id="app">
-        
+        </script>
       </div>
-      <button id="startTime" onclick="toggleStart()">
-          Start Timer
-      </button>
       
-      </body>
-      <script type="text/javascript" src="timer.js"></script>
+      <!--CAT COLUMN-->
+      <div class="cat">
+        <img src="img/cat.png">
+      </div>
+
+      <!--CLOCK COLUMN-->
+      <div class="clock">
+        <div id="app"></div>
+        <button id="startTime" onclick="toggleStart()">
+          Start Timer
+        </button>
+      
+        <script type="text/javascript" src="timer.js"></script>
+      </div>
 
     </body>
     <script type="text/javascript" src="timer.js"></script>
