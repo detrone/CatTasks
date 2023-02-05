@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Questrial&display=swap');
 
 body{
     display: flex;
@@ -9,11 +9,14 @@ body{
 
 h2 {
     font-family: 'Questrial', sans-serif;
+    font-size: 30px;
 }
   .card {
     /* Creates card. */
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: rgba(167, 157, 228, 0.5);
+    font-family: 'Antic Slab', serif;
+    font-size: 25px;
   }
   
   /* Add some padding inside the card container */
