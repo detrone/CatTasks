@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Questrial&display=swap');
 /* timer code start */
-body {
-  font-family: sans-serif;
-  display: grid;
-  height: 100vh;
-  place-items: center;
-}
 
 .base-timer__svg {
   transform: scaleX(-1);
@@ -13,11 +7,11 @@ body {
 
 .base-timer__label {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 50px;
   top: 0;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-size: 48px;
   font-family: "Times New Roman", Times, serif;
@@ -28,13 +22,36 @@ body {
 
 body{
     display: flex;
-    background-image:url(img/background.png);
-    padding-top: 100px;
-    padding-left: 50px;
+    background-image:url("https://storage.ko-fi.com/cdn/useruploads/post/8ce3ec9e-4768-4d6d-8ef7-bc9dc3852ebc_space_desktop-wallpaper.png");
+    flex-direction: row-reverse;
+    margin: 0px;
+}
+
+html, body {
+  max-height: 700px;
+}
+
+.cat {
+  width: 450px;
+  animation: floating 5s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cat img {
+  width: 450px;
+}
+
+
+@keyframes floating {
+  0% { transform: translate(0, 0px);}
+  50% { transform: translate(0, 35px);}
+  100% { transform: translate(0, -0px);}
 }
 
 h2 {
-    font-family: 'Questrial', sans-serif;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
     font-size: 30px;
 }
   .card {
@@ -43,6 +60,7 @@ h2 {
     background-color: rgba(167, 157, 228, 0.5);
     font-family: 'Antic Slab', serif;
     font-size: 25px;
+    display: flex;
   }
   
   /* Add some padding inside the card container */
@@ -55,21 +73,51 @@ h2 {
     padding: 30px 20px;
 }
 #newtask input{
-    width: 75%;
-    height: 45px;
+    width: 50%;
+    height: 15px;
     padding: 12px;
     color: #111111;
     font-weight: 500;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
     position: relative;
     border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     border: 2px solid #757c80;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#push {
+  background:rgba(0, 0, 0, 0.4);
+  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+  letter-spacing: 3px;
+  text-transform:uppercase;
+}
+
+#push:hover {
+  transition: 0.25s ease-in-out;
+  background:rgba(0, 0, 0, 0.9);
+}
+
+#taskdesc input{
+  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+  font-size: 16px;
+  width: 75%;
+  height: 80px;
+  border: 2px solid #757c80;
+  padding-top: 0px;
+  border-radius: 5px;
+  transition: 0.25s ease-in-out;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 #newtask input:focus{
     outline: none;
-    border-color: #0d75ec;
+    border-color: #9b65cc;
+}
+
+#taskdesc input:focus{
+    outline: none; 
+    border-color: #9b65cc;
 }
 
 #newtask button{
@@ -85,7 +133,6 @@ h2 {
     width: 20%;
     height: 45px;
     border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
 }
 
 #cards{
@@ -107,7 +154,6 @@ h2 {
     height: 50px;
     margin-bottom: 8px;
     padding: 5px 10px;
-    display: flex;
 }
 .task span{
     font-family: 'Poppins',sans-serif;
@@ -125,35 +171,31 @@ h2 {
     border-radius: 5px;
 }
 
-  #astrocat {
-    animation: floating 2s ease-in-out infinite;
+  .taskcol {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 25%;
+    padding-top: 25px;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
   }
-
-  @keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 20px); }
-    100%   { transform: translate(0, -0px); }   
-  }
-
-  #third {
-    width: 33%;
-    margin: 20px;
-  }
-
+  
   .btn{
-    padding: 10px 60px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.2);
     border: 0;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     outline: none;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 500;
-    border-radius: 30px;
+    border-radius:20px;
+    width: 100%;
   }
 
   .popup{
     width: 400px;
-    background: #ac86e0;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 6px;
     position:absolute;
     top:0;
@@ -164,6 +206,8 @@ h2 {
     color: #333;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    z-index:2;
+        font-family: Futura,Trebuchet MS,Arial,sans-serif; 
   }
 
   .open-popup{
@@ -186,94 +230,60 @@ h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
-  /* speech bubble test $color-pink: #fe4365;*/
- 
-.speechbubble {
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  place-items: center;
-  font: 2vw system-ui;
-  transform: translate(-50%, -50%) scale(0.1);
-  top:0;
-  visibility: hidden;
+  .taskcol b {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .card {
+    background: transparent;
+  }
+
+  .taskcol b, .taskcol h1 {
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-left: 15px;
+  }
+
+  .taskcol h1 {
+    color:#FAF9F6;
+    margin-top: 0px;
+    font-size: 35px;
+  }
+
+  .container b {
+    color:#FAF9F6;
+    letter-spacing: 1.8px;
+  }
+
+  .container button {
+    text-align: left;
+  }
+
+  .popup button {
+    text-align: center;
+  }
+
+  .delete {
+    height: 50px;
+  }
+
+  [type="addtask"] {
+    color: #FAF9F6;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+    letter-spacing: 1.5px;
+    margin-top: 15px;
+  }
+
+  [type="addtask"]:hover {
+    transition: 0.25s ease-in-out;
+    background:rgba(212,207,242,0.5);
+  }
+
+[type="button"]:hover {
+  transition: 0.25s ease-in-out;
+  background:rgba(0, 0, 0, 1);
 }
 
-.open-speechbubble {
-  visibility: visible;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
-}
 
-
-.speechbubble p {
-  transform: translatey(0px);
-  animation: float 5s ease-in-out infinite;
-  mix-blend-mode: multiply;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 15px;
-  color: #774f38;
-  background-color: #ece5ce;
-  padding: 50px;
-  border-radius: 11px;
-  position: relative;
-  box-shadow: 20px 20px #83af9b;
-  font-family: "Baloo 2", cursive;
-  border: 1px solid #c8c8a9;
-}
-
-.speechbubble p:after {
-  transform: translatey(0px);
-  animation: float2 5s ease-in-out infinite;
-  content: ".";
-  font-weight: bold;
-  -webkit-text-stroke: 0.5px #c8c8a9;
-  -webkit-text-fill-color: #ece5ce;
-  border: 1px solid #c8c8a9;
-  text-shadow: 22px 22px #83af9b;
-  text-align: left;
-  font-size: 55px;
-  width: 55px;
-  height: 11px;
-  line-height: 30px;
-  border-radius: 11px;
-  background-color: #ece5ce;
-  position: absolute;
-  display: block;
-  bottom: -30px;
-  left: 0;
-  box-shadow: 22px 22px #83af9b;
-  z-index: -2;
-}
-
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-
-@keyframes float2 {
-  0% {
-    line-height: 30px;
-    transform: translatey(0px);
-  }
-  55% {
-    transform: translatey(-20px);
-  }
-  60% {
-    line-height: 10px;
-  }
-  100% {
-    line-height: 30px;
-    transform: translatey(0px);
-  }
-}
