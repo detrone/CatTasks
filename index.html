@@ -5,10 +5,13 @@
         <title>Cat Tasks</title>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
     <script src="taskeditor.js"></script>
     </head>
 
     <body>
+      
+      
       <script src="taskeditor.js"></script>
       
           <div class="container">
@@ -22,10 +25,19 @@
 
         <div id="tasks"></div>
 
+        <div class="speechbubble" id="speechbubble">
+          <p>Great job!</p>
+        </div>
+
         <script>
           let popup = document.getElementById("popup");
             function openPopup(){
               popup.classList.add("open-popup");
+            }
+
+            function doneMsg(){
+              speechbubble.classList.add("open-speechbubble");
+              setTimeout(()=>{speechbubble.classList.remove("open-speechbubble");}, 5000)
             }
 
         function addTask(){
@@ -52,6 +64,7 @@
               for(var i=0; i<current_tasks.length; i++){
                   current_tasks[i].onclick = function(){
                       this.parentNode.remove();
+                      doneMsg();
                   }
               }
           }
