@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Questrial&display=swap');
-
 /* timer code start */
 body {
   font-family: sans-serif;
@@ -140,3 +139,141 @@ h2 {
     width: 33%;
     margin: 20px;
   }
+
+  .btn{
+    padding: 10px 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+  }
+
+  .popup{
+    width: 400px;
+    background: #ac86e0;
+    border-radius: 6px;
+    position:absolute;
+    top:0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+  }
+
+  .open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #9F45B0;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* speech bubble test $color-pink: #fe4365;*/
+ 
+.speechbubble {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font: 2vw system-ui;
+  transform: translate(-50%, -50%) scale(0.1);
+  top:0;
+  visibility: hidden;
+}
+
+.open-speechbubble {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.speechbubble p {
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 15px;
+  color: #774f38;
+  background-color: #ece5ce;
+  padding: 50px;
+  border-radius: 11px;
+  position: relative;
+  box-shadow: 20px 20px #83af9b;
+  font-family: "Baloo 2", cursive;
+  border: 1px solid #c8c8a9;
+}
+
+.speechbubble p:after {
+  transform: translatey(0px);
+  animation: float2 5s ease-in-out infinite;
+  content: ".";
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px #c8c8a9;
+  -webkit-text-fill-color: #ece5ce;
+  border: 1px solid #c8c8a9;
+  text-shadow: 22px 22px #83af9b;
+  text-align: left;
+  font-size: 55px;
+  width: 55px;
+  height: 11px;
+  line-height: 30px;
+  border-radius: 11px;
+  background-color: #ece5ce;
+  position: absolute;
+  display: block;
+  bottom: -30px;
+  left: 0;
+  box-shadow: 22px 22px #83af9b;
+  z-index: -2;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+  55% {
+    transform: translatey(-20px);
+  }
+  60% {
+    line-height: 10px;
+  }
+  100% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+}

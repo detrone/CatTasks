@@ -5,20 +5,42 @@
         <title>Cat Tasks</title>
         <meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap" rel="stylesheet">
+    <script src="taskeditor.js"></script>
     </head>
 
     <body>
-          <div id="newtask">
-            <input type="text" placeholder="Task to be done..">
-  
-            <div id="taskdesc"><input type="text" placeholder="Task description.."></div>
-            <button id="push">Add</button>
-        </div>
+      
+      
+      <script src="taskeditor.js"></script>
+      
+          <div class="container">
+            <button type="addtask" class="btn" onclick="openPopup()">Add task!</button>
+            <div class="popup" id="popup">
+              <div id="newtask"><input type="text" placeholder="Task to be done.."></div>
+              <div id="taskdesc"><input type="text" placeholder="Task description.."></div>
+              <button type="button" id="push" onclick="addTask()">Add</button>
+            </div>
+          </div>
 
         <div id="tasks"></div>
 
-        <script type="text/javascript">
-        document.querySelector('#push').onclick = function(){
+        <div class="speechbubble" id="speechbubble">
+          <p>Great job!</p>
+        </div>
+
+        <script>
+          let popup = document.getElementById("popup");
+            function openPopup(){
+              popup.classList.add("open-popup");
+            }
+
+            function doneMsg(){
+              speechbubble.classList.add("open-speechbubble");
+              setTimeout(()=>{speechbubble.classList.remove("open-speechbubble");}, 5000)
+            }
+
+        function addTask(){
           if(document.querySelector('#newtask input').value.length == 0){
               alert("Please Enter a Task")
           }
@@ -42,9 +64,11 @@
               for(var i=0; i<current_tasks.length; i++){
                   current_tasks[i].onclick = function(){
                       this.parentNode.remove();
+                      doneMsg();
                   }
               }
           }
+          popup.classList.remove("open-popup")
       }
       </script>
 
