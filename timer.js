@@ -3,6 +3,7 @@
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
+var timeRunning = new Boolean(false);
 
 const COLOR_CODES = {
   info: {
@@ -48,13 +49,13 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-startTimer();
-
 function onTimesUp() {
   clearInterval(timerInterval);
+  timeRunning = false;
 }
 
 function startTimer() {
+  timeRunning = true;
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT - timePassed;
@@ -113,3 +114,20 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+/*toggle start button*/ 
+const btnStart = document.getElementById("startTime");
+
+function toggleStart() {
+  {
+    if(timeRunning == false) {
+      startTimer();
+      btnStart.innerText = "Pause Timer";
+    } else {
+      onTimesUp();
+      btnStart.innerText = "Start Timer";
+    }
+  }
+}
+
+
