@@ -5,14 +5,15 @@ document.querySelector('#push').onclick = function(){
 
     else{
         document.querySelector('#tasks').innerHTML += `
-            <div class="task">
-                <span id="taskname">
-                    ${document.querySelector('#newtask input').value}
-                </span>
-                <button class="delete">
+        <div class="card">
+      <div class="container">
+        <h4><b>${document.querySelector('#newtask input').value}</b></h4>
+        <p>${document.querySelector('#taskdesc input').value}</p>
+      </div>
+      <button class="delete">
                     <i class="far fa-trash-alt"></i>
-                </button>
-            </div>
+      </button>
+    </div>
         `;
 
         var current_tasks = document.querySelectorAll(".delete");
@@ -23,3 +24,4 @@ document.querySelector('#push').onclick = function(){
         }
     }
 }
+
