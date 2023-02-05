@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Questrial&display=swap');
+
 body{
+    display: flex;
     background-image:url(img/background.png);
+    padding-top: 100px;
+    padding-left: 50px;
 }
 
+h2 {
+    font-family: 'Questrial', sans-serif;
+    font-size: 30px;
+}
   .card {
-    /* Add shadows to create the "card" effect */
-    border-radius: 5px;
-    background-color: grey;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    /* Creates card. */
+    border-radius: 20px;
+    background-color: rgba(167, 157, 228, 0.5);
+    font-family: 'Antic Slab', serif;
+    font-size: 25px;
   }
   
   /* Add some padding inside the card container */
@@ -95,3 +98,18 @@ body{
     width: 40px;
     border-radius: 5px;
 }
+
+  #astrocat {
+    animation: floating 2s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 20px); }
+    100%   { transform: translate(0, -0px); }   
+  }
+
+  #third {
+    width: 33%;
+    margin: 20px;
+  }
