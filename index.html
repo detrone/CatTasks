@@ -29,19 +29,18 @@
 
         <div id="tasks"></div>
 
-        <div class="speechbubble" id="speechbubble">
-          <p></p>
-        </div>
-
         <script>
           let popup = document.getElementById("popup");
             function openPopup(){
               popup.classList.add("open-popup");
             }
 
+            var messages = ["You are pawsome!", "You did purrfect", "With the right catitude, anything is pawsible!", "PAWMODORO!"];
             function doneMsg(){
+              var randomIndex = Math.round(Math.random()*3);
+              document.getElementById('speechbubble').innerHTML = "<p>" + messages[randomIndex] + "</p>";
               speechbubble.classList.add("open-speechbubble");
-              setTimeout(()=>{speechbubble.classList.remove("open-speechbubble");}, 5000)
+              setTimeout(()=>{speechbubble.classList.remove("open-speechbubble");}, 8000)
             }
 
         function addTask(){
@@ -53,18 +52,20 @@
               document.querySelector('#tasks').innerHTML += `
               <div class="card">
         <div id="app"></div>
-        <div class="card">
+        <div class="card" id="user">
             <div class="container">
-              <h4><b>${document.querySelector('#newtask input').value}</b></h4>
+              <h4>${document.querySelector('#newtask input').value}</h4>
               <p>${document.querySelector('#taskdesc input').value}</p>
             </div>
+            <div class="del">
             <button class="delete">
-                          <i class="far fa-trash-alt"></i>
+              ✖
             </button>
+            </div>
           </div>
               `;
       
-              var current_tasks = document.querySelectorAll(".delete");
+              var current_tasks = document.querySelectorAll(".del");
               for(var i=0; i<current_tasks.length; i++){
                   current_tasks[i].onclick = function(){
                       this.parentNode.remove();
@@ -81,6 +82,10 @@
       <div class="cat">
         <img src="img/cat.png">
         
+      </div>
+
+      <div class="speechbubble" id="speechbubble">
+        <p></p>
       </div>
 
       <div class="shootingStar">
