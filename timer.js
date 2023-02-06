@@ -39,7 +39,7 @@ document.getElementById("app").innerHTML = `
 function onTimesUp() {
   clearInterval(timerInterval);
   timeRunning = false;
-  btnStart.innerText = "Start Timer";
+  btnStart.innerText = "▶";
 }
 
 function startTimer() {
@@ -93,10 +93,10 @@ function toggleStart() {
   {
     if(timeRunning == false && timeLeft > 0) {
       startTimer();
-      btnStart.innerText = "Pause Timer";
+      btnStart.innerText = "∎";
     } else if (timeRunning == true){
       onTimesUp();
-      btnStart.innerText = "Start Timer";
+      btnStart.innerText = "▶";
     } 
   }
 }
@@ -122,6 +122,16 @@ function minusMinute(){
 function resetTimer(){
   timeLeft = RESET_TIME;
   TIME_LIMIT = RESET_TIME;
+  timePassed = 0;
+  document.getElementById("base-timer-label").innerHTML = formatTime(
+    timeLeft
+  );
+  onTimesUp();
+}
+
+function breakTime(){
+  timeLeft = 300;
+  TIME_LIMIT = 300;
   timePassed = 0;
   document.getElementById("base-timer-label").innerHTML = formatTime(
     timeLeft

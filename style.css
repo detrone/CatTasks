@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 /* timer code start */
 
 .base-timer__svg {
@@ -6,19 +8,51 @@
 }
 
 .base-timer__label {
-  position: absolute;
   width: 150px;
   height: 50px;
   top: 0;
   display: flex;
+  flex-direction: column;
   align-items: left;
   justify-content: center;
-  font-size: 48px;
-  font-family: "Times New Roman", Times, serif;
+  font-size: 96px;
+  font-family: 'VT323';
   color: white;
+  animation: glow 0.5s ease-in-out infinite alternate;
+  margin-left: 15%;
+  margin-bottom: 12%;
 }
 
 /*timer code end*/
+
+/*timer buttons*/
+
+.time {
+  background-color: #ffffff00;
+  border: none;
+  color: #e5f235;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  border-radius: 12px;
+  font-family: 'VT323';
+  margin: .5%;
+  
+}
+
+.breakTime {
+  padding: 16px 8px
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }}
 
 body{
     display: flex;
