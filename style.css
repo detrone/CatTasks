@@ -61,11 +61,43 @@ h2 {
     font-family: 'Antic Slab', serif;
     font-size: 25px;
     display: flex;
+    justify-content: space-between;
   }
   
   /* Add some padding inside the card container */
   .container {
     padding: 2px 16px;
+  }
+
+  #user {
+    margin: 10px;
+    width: 100%;
+  }
+
+  #user:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.25s ease-in-out;
+  }
+
+  #user h4 {
+    font-size: 18px;
+    color: gray;
+    margin: 5px;
+  }
+
+  #user p {
+    font-size 16px;
+    color: #FAF9F6;
+    margin: 5px;
+  }
+
+  .delete {
+    height: 50px;
+    background: transparent;
+    border: transparent;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: #FAF9F6;
   }
 
   #newtask{
@@ -265,10 +297,6 @@ h2 {
     text-align: center;
   }
 
-  .delete {
-    height: 50px;
-  }
-
   [type="addtask"] {
     color: #FAF9F6;
     font-family: Futura,Trebuchet MS,Arial,sans-serif; 
@@ -286,4 +314,95 @@ h2 {
   background:rgba(0, 0, 0, 1);
 }
 
+/* speech bubble test $color-pink: #fe4365;*/
+ 
+.speechbubble {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font: 2vw system-ui;
+  transform: translate(-50%, -50%) scale(0.1);
+  top:0;
+  visibility: hidden;
+}
 
+.open-speechbubble {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.speechbubble p {
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+  mix-blend-mode: multiply;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 15px;
+  color: #081115;
+  background-color: #dfdbf5;
+  padding: 50px;
+  border-radius: 11px;
+  position: absolute;
+  box-shadow: 20px 20px #9cecff;
+  font-family: "Baloo 2", cursive;
+  border: 1px solid #dfdbf5;
+  margin-top: 350px;
+}
+
+.speechbubble p:after {
+  transform: translatey(0px);
+  animation: float2 5s ease-in-out infinite;
+  content: ".";
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px #dfdbf5;
+  -webkit-text-fill-color: #dfdbf5;
+  border: 1px solid #dfdbf5;
+  text-shadow: 22px 22px #9cecff;
+  text-align: left;
+  font-size: 55px;
+  width: 55px;
+  height: 11px;
+  line-height: 30px;
+  border-radius: 11px;
+  background-color: #dfdbf5;
+  position: absolute;
+  display: block;
+  bottom: -30px;
+  right: 0;
+  box-shadow: 22px 22px #9cecff;
+  z-index: 3;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+  55% {
+    transform: translatey(-20px);
+  }
+  60% {
+    line-height: 10px;
+  }
+  100% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+}
